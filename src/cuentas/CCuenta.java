@@ -1,15 +1,29 @@
 package cuentas;
 
+/**
+ *
+ * @author fernando.valero
+ */
 public class CCuenta {
     private String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
 
+    /**
+     *Es un constructor por defecto.
+     */
     public CCuenta()
     {
     }
 
+    /**
+     *Constructor con parámetros.
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -17,11 +31,20 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     *
+     * @return
+     */
     public double estado()
     {
         return getSaldo();
     }
 
+    /**
+     *
+     * @param cantidad
+     * @throws Exception
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -29,6 +52,11 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     *
+     * @param cantidad
+     * @throws Exception
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
